@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Shopping Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body ng-app="productApp" ng-controller="productAppController">
+
+    <!-- Header Section -->
+    <header class="header">
+        <div>
+            <dialog>
+                <i class="fa-solid fa-square-xmark fa-2xl"></i>
+                <h1>Shopping Cart</h1>
+                <div class="cart_products" ng-repeat="product in cartProducts">
+                    <h2>{{product.name}}</h3>
+                    <p>{{product.cost}}</p>
+                    <label>Enter units</label>
+                    <br>
+                    <input type="number" min="1" ng-model="product.units">
+                    <button class="remove_from_cart" ng-click="removeFromCart(product)">Remove from Cart</button>
+                </div>
+                <p ng-if="cartProducts.length==0"><strong>Empty Cart</strong></p>
+                <p ng-if="cartProducts.length!=0"><strong>Total Cost:</strong>
+                    {{cartProducts | cartTotalCost}}</p>
+                <!-- <p>{{units}}</p> -->
+            </dialog>
+            <button class="cart_button"><i class="fa-solid fa-cart-shopping"></i><sub>{{cartProducts.length}}</sub></button>
+        </div>
+        <h1 class="main_heading">Welcome To Products Shopping Site</h1>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search">
+        <label>Search</label>
+        <input type="text">
+        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    </div>
+
+    <!-- Product Details Section -->
+    <div class="form">
+        <h3>Product Details</h3>
+        <label>Product &nbsp;Name</label>
+        <br>
+        <input type="text" ng-model="productName">
+        <br><br>
+        <label>Product &nbsp; Cost</label>
+        <br>
+        <input type="number" class="product_cost" step="0.01" ng-model="productCost" min="0" placeholder="0">
+        <button ng-click="onAddProduct(productName, productCost)">ADD</button>
+    </div>
+
+    <!-- Product Info Section -->
+    <div class="products_info">
+        <h1>Products Information</h1>
+        <div class="products" ng-repeat="product in products">
+            <h2>{{product.name}}</h2>
+            <p>{{product.cost}}</p>
+            <button class="add_to_cart" ng-click="addToCart(product)">Add to Cart</button>
+        </div>
+    </div>
+
+    <script src="angular.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+/* Header Section CSS */
+* {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.header {
+    margin-top: -20px;
+    background-color: #FFF2D7;
+    height: 150px;
+    width: 100%;
+}
+
+.cart_button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #6CB4EE;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.cart_button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.main_heading {
+    text-align: center;
+    padding-top: 3%;
+    color: #010725;
+}
+
+.form {
+    float: right;
+    margin-right: 10px;
+    width: 30%;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.form:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form>h3 {
+    position: relative;
+    top: -25px;
+    text-align: center;
+}
+
+.form>label {
+    padding-left: 35%;
+    padding-right: 5%;
+}
+
+.form>input{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 20px;
+}
+
+.form>button{
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 15px;
+    border-radius: 20px;
+    border: none;
+    width: 50px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    background-color: #6CB4EE;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.search{
+    margin: auto;
+    position: relative;
+    top: 20px;
+    width: 30%;
+}
+
+.search>input
+{
+    position: relative;
+    left: 20px;
+    width: 250px;
+    height: 20px;
+    border-radius: 30px;
+}
+
+.search>i{
+    position: relative;
+    right: 10px;
+}
+
+.products_info{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    width: 63%;
+    height: auto;
+    background-color: #85D085;
+    border-radius: 20px;
+}
+
+.products_info>h1{
+    color: #ffffff;
+    text-align: center;
+    margin: 2%;
+}
+
+.products{
+    margin: auto;
+    width: 40%;
+    position: relative;
+    bottom: 10px;
+    /* top: 100px; */
+    background-color: #0F141E;
+    border-radius: 40px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.products>h2{
+    text-align: center;
+    color: #ffffff;
+}
+
+.products>p{
+    text-align: center;
+    color: #ffffff;
+}
+
+.add_to_cart{
+    float: right;
+    position: relative;
+    top: -65px;
+    right: 10%;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #6CB4EE;
+    color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.add_to_cart:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+dialog{
+    border-radius: 20px;
+    width: 500px;
+    height: 500px;
+    border: none;
+}
+
+dialog>i{
+    float: right;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+}
+
+dialog>h1{
+    text-align: center;
+}
+
+.cart_products{
+    position: relative;
+    background-color: #FFE0B5;
+    border-radius: 40px;
+    height: 150px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cart_products>h2,p{
+    color: #1f1616;
+    text-align: center;
+}
+
+.cart_products>p{
+    margin-top: -15px;
+}
+
+.cart_products>label,input{
+    position: relative;
+    left: 30%;
+}
+
+.cart_products>input{
+    top: 10px;
+}
+
+.remove_from_cart{
+    float: right;
+    position: relative;
+    top: -65px;
+    right: 5%;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #6CB4EE;
+    color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    cursor: pointer;
+}
