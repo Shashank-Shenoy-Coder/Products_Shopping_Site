@@ -21,20 +21,27 @@
             <dialog>
                 <i class="fa-solid fa-square-xmark fa-2xl"></i>
                 <h1>Shopping Cart</h1>
-                <div class="cart_products" ng-repeat="product in cartProducts">
+                <label ng-if="cartProducts.length!=0">Order By</label>
+                <select ng-model="orderProducts">
+                    <option value="select">---Select---</option>
+                    <option value="name">Product Name</option>
+                    <option value="cost">Product Cost</option>
+                </select>
+                <div class="cart_products" ng-repeat="product in cartProducts | orderBy:orderProducts">
                     <h2>{{product.name}}</h3>
-                    <p>{{product.cost}}</p>
-                    <label>Enter units</label>
-                    <br>
-                    <input type="number" min="1" ng-model="product.units">
-                    <button class="remove_from_cart" ng-click="removeFromCart(product)">Remove from Cart</button>
+                        <p>{{product.cost}}</p>
+                        <label>Enter units</label>
+                        <br>
+                        <input type="number" min="1" ng-model="product.units">
+                        <button class="remove_from_cart" ng-click="removeFromCart(product)">Remove from Cart</button>
                 </div>
-                <p ng-if="cartProducts.length==0"><strong>Empty Cart</strong></p>
+                <p ng-if="cartProducts.length==0" class="empty_cart"><strong>Empty Cart</strong></p>
                 <p ng-if="cartProducts.length!=0"><strong>Total Cost:</strong>
                     {{cartProducts | cartTotalCost}}</p>
                 <!-- <p>{{units}}</p> -->
             </dialog>
-            <button class="cart_button"><i class="fa-solid fa-cart-shopping"></i><sub>{{cartProducts.length}}</sub></button>
+            <button class="cart_button"><i
+                    class="fa-solid fa-cart-shopping"></i><sub>{{cartProducts.length}}</sub></button>
         </div>
         <h1 class="main_heading">Welcome To Products Shopping Site</h1>
     </header>
@@ -42,8 +49,19 @@
     <!-- Search Section -->
     <div class="search">
         <label>Search</label>
-        <input type="text">
+        <input type="text" ng-model="searchProduct">
         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+        <div class="filter">
+            <i class="fa-solid fa-filter" id="filter_icon"></i>
+            <div class="filter_content">
+                <h3>Filter By:</h3>
+                <button id="filter_product_name" onclick="changeColor()"> Product Name </button>
+                <img src="images/close.png" alt="close" width="10px" height="10px" id="close_icon_1" onclick="changeToOriginalColor()">
+
+                <button id="filter_product_cost" onclick="changeBgColor()"> Product Cost </button>
+                <img src="images/close.png" alt="close" width="10px" height="10px" id="close_icon_2" onclick="changeToOriginalBgColor()">
+            </div>
+        </div>
     </div>
 
     <!-- Product Details Section -->
@@ -62,7 +80,7 @@
     <!-- Product Info Section -->
     <div class="products_info">
         <h1>Products Information</h1>
-        <div class="products" ng-repeat="product in products">
+        <div class="products" ng-repeat="product in products | filter:searchProduct">
             <h2>{{product.name}}</h2>
             <p>{{product.cost}}</p>
             <button class="add_to_cart" ng-click="addToCart(product)">Add to Cart</button>
@@ -71,6 +89,9 @@
 
     <script src="angular.js"></script>
     <script src="script.js"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>

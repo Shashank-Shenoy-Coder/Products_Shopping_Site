@@ -11,6 +11,27 @@ closeButton.addEventListener("click", () => {
     dialog.close()
 })
 
+
+// Background color of filter by products
+function changeColor() {
+    document.getElementById("filter_product_name").style.background = '#6CB4EE';
+}
+
+function changeBgColor() {
+    document.getElementById("filter_product_cost").style.background = '#6CB4EE';
+}
+
+function changeToOriginalColor()
+{
+    document.getElementById("filter_product_name").style.background = '#85D085';
+}
+
+function changeToOriginalBgColor()
+{
+    document.getElementById("filter_product_cost").style.background = '#85D085';
+}
+
+
 // Angular JS 
 var productApp = angular.module("productApp", [])
 
