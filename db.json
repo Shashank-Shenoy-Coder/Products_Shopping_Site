@@ -1,3 +1,34 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": 1,
+      "name": "Mouse",
+      "unitCost": 500,
+      "units": 1
+    },
+    {
+      "id": 3,
+      "name": "Dell A2",
+      "unitCost": 30000,
+      "units": 1
+    },
+    {
+      "id": 4,
+      "name": "HP A1",
+      "unitCost": 50000,
+      "units": 1
+    },
+    {
+      "id": 5,
+      "name": "Dell A5",
+      "unitCost": 20000,
+      "units": 1
+    },
+    {
+      "id": 6,
+      "name": "Asus B8",
+      "unitCost": 15000,
+      "units": 1
+    }
+  ]
 }

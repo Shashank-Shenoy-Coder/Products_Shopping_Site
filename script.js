@@ -34,6 +34,7 @@ function changeToOriginalBgColor() {
 var productApp = angular.module("productApp", [])
 
 productApp.service("productOperations", function (productApi) {
+
     this.createNewProduct = function (productName, productUnitCost) {
         var newProduct = {
             id: 0,
@@ -133,6 +134,8 @@ productApp.factory('productApi', function ($http, productServiceEndPoint) {
 productApp.controller("productAppController", function ($scope, productOperations, productApi) {
     $scope.products = [];
     $scope.cartProducts = [];
+    $scope.search = {}
+    $scope.searchBy = '$';
 
     productApi.getProducts()
         .then(function (products) {
@@ -154,4 +157,26 @@ productApp.controller("productAppController", function ($scope, productOperation
     $scope.removeFromCart = function (product) {
         productOperations.removeProductFromCart($scope.cartProducts, product)
     }
+
+    // $scope.changeSearchValue = function(selectedValue)
+    // {
+    //     if(selectedValue == 'Product Name')
+    //         {
+    //             if(selectedValue == 'Product Cost')
+    //                 console.log(selectedValue)
+    //         }
+    // }
+
+    // $scope.searchProduct = function (name, cost) {
+    //     if (name == 0 && cost == 0) {
+    //         $scope.searchProduct.name = 1;
+    //         $scope.searchProduct.cost = 1;
+    //     }
+    //     else if (name == 1 && cost == 0) {
+    //         $scope.searchProduct.cost = 0;
+    //     }
+    //     else {
+    //         $scope.searchProduct.name = 0;
+    //     }
+    // }
 })
