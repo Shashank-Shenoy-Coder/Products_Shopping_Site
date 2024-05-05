@@ -29,7 +29,7 @@
                 </select>
                 <div class="cart_products" ng-repeat="product in cartProducts | orderBy:orderProducts">
                     <h2>{{product.name}}</h3>
-                        <p>{{product.cost}}</p>
+                        <p>{{product.unitCost}}</p>
                         <label>Enter units</label>
                         <br>
                         <input type="number" min="1" ng-model="product.units">
@@ -82,8 +82,9 @@
         <h1>Products Information</h1>
         <div class="products" ng-repeat="product in products | filter:searchProduct">
             <h2>{{product.name}}</h2>
-            <p>{{product.cost}}</p>
+            <p>{{product.unitCost}}</p>
             <button class="add_to_cart" ng-click="addToCart(product)">Add to Cart</button>
+            <button class="remove_product" ng-click="removeProduct(product)">Remove Product</button>
         </div>
     </div>
 
